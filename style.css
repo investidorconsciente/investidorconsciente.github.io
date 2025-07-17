@@ -162,18 +162,11 @@ body {
   text-align: center;
 }
 
-/* Responsivo */
-/* @media (max-width: 768px) {
-  .cards { flex-direction: column; }
-  .titulo { font-size: 2rem; }
-} */
-
-
 .header {
   background: var(--fundo);
   padding: 6rem 3rem;
 }
-/* Section-two */
+
 .section-two {
   grid-area: section-two;
   display: grid;

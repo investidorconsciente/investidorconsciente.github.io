@@ -3,10 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>eBook: Estratégias de Investidores Privilegiados</title>
+  <title>Investidor Consciente</title>
+  <link rel="icon" type="image/svg" href="./public/logo.svg">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Teste</h1>
+  <header class="section-two secao escura">
+    <div class="image">
+      <img src="./public/logo-text-white.svg" height="400" width="400" alt="Gestante no campo" />
+    </div>
+    <div class="text">
+      <h3>Estratégias para Investidores Conscientes</h3>
+      <p>
+        Descubra as estratégias que os grandes investidores usam para proteger seu patrimônio, garantir renda e crescer mesmo em tempos incertos — e comece hoje mesmo.
+      </p>
+    </div>
+  </header>
+
+  <section class="section-two secao clara" style="margin: 3rem auto;">
+    <div class="text">
+      <h3>Quer aprender?</h3>
+      <p>Cadastre-se e receba o nosso eBook com conteúdo grátis!</p>
+      <p><a href="#formulario" class="botao">Quero Baixar o eBook</a></p>
+    </div>
+    <div class="image">
+      <img src="./public/sec3.webp" alt="Gestante no campo" />
+    </div>
+  </section>
+
+  <section class="section-two secao escura">
+    <div class="text" style="text-align: center;">
+      <h3 style="margin-bottom: 80px;">Você vai aprender</h3>
+      <div class="cards">
+        <div class="card"><span>🔐</span><p>Distribuição de ativos com segurança</p></div>
+        <div class="card"><span>🌎</span><p>Investimento fora do Brasil</p></div>
+        <div class="card"><span>💰</span><p>Ganhar com incentivos fiscais</p></div>
+        <div class="card"><span>📈</span><p>Aproveitar os ciclos da economia</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-two secao clara" id="formulario">
+    <div class="text" style="margin: auto;">
+      <h3>Conteúdo do eBook</h3>
+      <ul class="lista-conteudo">
+        <li>✔️ Alocação de ativos</li>
+        <li>✔️ Investimentos offshore</li>
+        <li>✔️ Fundos estruturados</li>
+        <li>✔️ Planejamento sucessório</li>
+        <li>✔️ Estratégias fiscais e networking</li>
+      </ul>
+    </div>
+    <form class="formulario" onsubmit="enviarFormulario(event)">
+      <h2>Receba o eBook no seu e-mail</h2>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="tel" placeholder="Telefone (opcional)">
+      <button type="submit">Receber Agora</button>
+      <p class="privacidade">🔒 Seus dados estão protegidos. Sem spam!</p>
+    </form>
+  </section>
+
+  <footer class="section-two secao escura">
+    <p style="text-align: center;">© Investidor Consciente — estratégias para investidores protegerem seu patrimônio.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

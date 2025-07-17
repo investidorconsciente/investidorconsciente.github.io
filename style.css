@@ -1,53 +1,64 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root {
-  --dourado: #bfa145;
-  --claro: #f9f9f9;
-  --escuro: #1e1e1e;
-  --txt-claro: #fff;
-  --txt-escuro: #222;
-  --verde: #198754;
+  --azul: #1E2A38;
+  --dourado: #D4AF37;
+  --fundo: #FAF8F4;
+  --branco: #ffffff;
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--claro);
-  color: var(--txt-escuro);
+  font-family: "Urbanist", sans-serif;
+  background: var(--fundo);
+  color: var(--azul);
 }
 
 .container {
-  max-width: 960px;
+  /* max-width: 960px; */
   margin: auto;
-  padding: 60px 20px;
+  padding: 6rem 3rem;
   text-align: center;
 }
 
-.secao {
-  width: 100%;
+.logo {
+  height: 60px;
 }
 
-.secao.clara { background: var(--claro); color: var(--txt-escuro); }
-.secao.escura { background: var(--escuro); color: var(--txt-claro); }
+.secao.clara {
+  background: var(--fundo);
+  color: var(--azul);
+}
+
+.secao.escura {
+  background: var(--azul);
+  color: var(--branco);
+}
 
 .titulo {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: var(--dourado);
-  margin-bottom: 20px;
 }
 
 .subtitulo {
-  font-size: 1.3rem;
-  margin-bottom: 40px;
+  font-size: 1.2rem;
+  margin-top: 15px;
 }
 
 .imagem-flat {
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .destaque {
   color: var(--dourado);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 30px;
 }
 
@@ -59,12 +70,11 @@ body {
 }
 
 .card {
-  background: var(--escuro);
-  color: var(--txt-claro);
-  padding: 20px;
-  border-radius: 8px;
+  background: var(--branco);
+  color: var(--azul);
+  padding: 6rem 3rem;
+  border-radius: 10px;
   width: 220px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .card span {
@@ -72,15 +82,16 @@ body {
 }
 
 .card p {
-  margin-top: 10px;
-  font-size: 1rem;
+  text-align: center!important;
+  margin: auto!important;
 }
 
 .lista-conteudo {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
   text-align: left;
   display: inline-block;
-  font-size: 1.1rem;
-  margin: 0 auto;
 }
 
 .lista-conteudo li {
@@ -90,13 +101,13 @@ body {
 .cta-texto {
   font-size: 1.7rem;
   margin-bottom: 20px;
-  color: var(--dourado);
+  color: var(--azul);
 }
 
 .botao {
   background: var(--dourado);
-  color: var(--escuro);
-  padding: 18px 36px;
+  color: var(--azul);
+  padding: 15px 30px;
   font-size: 1.1rem;
   border-radius: 30px;
   text-decoration: none;
@@ -104,19 +115,24 @@ body {
 }
 
 .botao:hover {
-  background: #a78d38;
+  background: #c99b2f;
 }
 
 .formulario {
-  background: #fff;
-  color: var(--txt-escuro);
+  background: var(--branco);
+  color: var(--azul);
   padding: 40px;
   border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
 .formulario input {
   width: 100%;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
   padding: 14px;
   margin-bottom: 20px;
   border-radius: 6px;
@@ -127,8 +143,8 @@ body {
 .formulario button {
   width: 100%;
   padding: 14px;
-  background: var(--verde);
-  color: white;
+  background: var(--dourado);
+  color: var(--azul);
   border: none;
   font-size: 1rem;
   border-radius: 6px;
@@ -136,17 +152,65 @@ body {
 }
 
 .formulario button:hover {
-  background: #146c43;
+  background: #c99b2f;
 }
 
 .privacidade {
   font-size: 0.85rem;
   margin-top: 15px;
-  color: #aaa;
+  color: #555;
+  text-align: center;
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
-  .cards { flex-direction: column; align-items: center; }
+/* @media (max-width: 768px) {
+  .cards { flex-direction: column; }
   .titulo { font-size: 2rem; }
+} */
+
+
+.header {
+  background: var(--fundo);
+  padding: 6rem 3rem;
+}
+/* Section-two */
+.section-two {
+  grid-area: section-two;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  gap: 2rem;
+  align-items: center;
+  padding: 6rem 3rem;
+}
+.section-two .image img {
+  width: 100%;
+  min-width: 400px;
+  max-width: 400px;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+}
+.section-two .text h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dourado);
+}
+.section-two .text p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 5.5rem;
+  text-align: justify;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

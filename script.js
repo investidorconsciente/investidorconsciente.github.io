@@ -31,3 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     observador.observe(el);
   });
 });
+
+document.getElementById('scrollBtn').addEventListener('click', function () {
+  const destino = document.getElementById('formulario');
+  destino.scrollIntoView({ behavior: 'smooth' });
+});
+document.getElementById('aprenderBtn').addEventListener('click', function () {
+  const destino = document.getElementById('queroAprender');
+  destino.scrollIntoView({ behavior: 'smooth' });
+});

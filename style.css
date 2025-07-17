@@ -28,6 +28,11 @@ body {
   height: 60px;
 }
 
+.secao {
+  padding: 6rem 3rem;
+  gap: 2rem;
+}
+
 .secao.clara {
   background: var(--fundo);
   color: var(--azul);
@@ -105,6 +110,7 @@ body {
 }
 
 .botao {
+  font-family: "Urbanist", sans-serif;
   background: var(--dourado);
   color: var(--azul);
   padding: 15px 30px;
@@ -112,6 +118,8 @@ body {
   border-radius: 30px;
   text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
+  border: none;
 }
 
 .botao:hover {
@@ -168,27 +176,33 @@ body {
 }
 
 .section-two {
-  grid-area: section-two;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 6rem 3rem;
 }
+
+@media (max-width: 768px) {
+  .section-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .section-two .image img {
   width: 100%;
-  min-width: 400px;
   max-width: 400px;
   border-radius: 12px;
   display: block;
   margin: auto;
 }
-.section-two .text h3 {
+
+.secao .text h3 {
   font-size: 2rem;
   font-weight: 700;
   color: var(--dourado);
 }
-.section-two .text p {
+
+.secao .text p {
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 5.5rem;

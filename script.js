@@ -1,5 +1,22 @@
 // script.js
 
+document.getElementById('telefone').addEventListener('input', function (e) {
+  let value = e.target.value.replace(/\D/g, ''); // remove tudo que não for número
+  let formatted = '';
+
+  if (value.length > 10) {
+    formatted = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+  } else if (value.length > 6) {
+    formatted = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+  } else if (value.length > 2) {
+    formatted = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+  } else {
+    formatted = value.replace(/^(\d*)/, '($1');
+  }
+
+  e.target.value = formatted;
+});
+
 function enviarFormulario(event) {
   event.preventDefault();
 
@@ -29,12 +46,12 @@ function enviarFormulario(event) {
     body: data,
   })
     .then(() => {
-      alert("Formulário enviado com sucesso! Verifique seu e-mail.");
+      mostrarModal("Formulário enviado com sucesso! O eBook será enviado em poucos instantes para seu e-mail. Verifique a caixa de entrada.");
       form.reset();
     })
     .catch((err) => {
       console.error("Erro ao enviar:", err);
-      alert("Erro ao enviar o formulário. Tente novamente.");
+      mostrarModal("Erro ao enviar o formulário. Tente novamente.");
     });
 }
 
@@ -49,8 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("fade-in");
+        entry.target.classList.remove("div-hidden");
       } else {
         entry.target.classList.remove("fade-in");
+        entry.target.classList.add("div-hidden");
       }
     });
   }, {
@@ -77,4 +96,17 @@ document.getElementById('aprenderBtn').addEventListener('click', function () {
   destino.scrollIntoView({ behavior: 'smooth' });
 });
 
-// so tentando algo
+// Mostra modal de mensagem personalizada
+function mostrarModal(mensagem) {
+  const modal = document.getElementById("modalMensagem");
+  const texto = document.getElementById("modalTexto");
+  texto.textContent = mensagem;
+  modal.style.display = "flex";
+}
+
+// Fecha o modal
+function fecharModal() {
+  document.getElementById("modalMensagem").style.display = "none";
+}
+
+//Formulário enviado com sucesso! O eBook será enviado em poucos instantes para seu e-mail. Verifique a caixa de entrada.

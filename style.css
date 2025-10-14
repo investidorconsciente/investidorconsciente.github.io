@@ -2,6 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
+.div-hidden {
+  visibility: hidden;
+}
 
 :root {
   --azul: #1E2A38;
@@ -58,7 +61,6 @@ body {
   max-width: 600px;
   margin: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .destaque {
@@ -133,7 +135,6 @@ body {
   border-radius: 10px;
   max-width: 500px;
   margin: auto;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
 .formulario input {
@@ -219,5 +220,64 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Modal personalizado */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease-out;
+  max-width: 90%;
+}
+
+.modal-conteudo p {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.modal-conteudo button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #00704A;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-conteudo button:hover {
+  background-color: #005a3c;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

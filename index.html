@@ -12,10 +12,10 @@
 </head>
 <body>
   <header class="section-two secao escura">
-    <div class="image">
+    <div class="image div-hidden">
       <img src="./public/logo-text-white.svg"/>
     </div>
-    <div class="text">
+    <div class="text div-hidden">
       <h3>Estratégias para Investidores Conscientes</h3>
       <p>
         Descubra as estratégias que os grandes investidores usam para proteger seu patrimônio, garantir renda e crescer mesmo em tempos incertos — e comece hoje mesmo.
@@ -25,18 +25,18 @@
   </header>
 
   <section class="section-two secao clara" style="margin: 3rem auto;" id="queroAprender">
-    <div class="text">
+    <div class="text div-hidden">
       <h3>Quer aprender?</h3>
       <p>Cadastre-se e para receber o primeiro eBook com de forma gratuita!</p>
       <p><button id="scrollBtn" class="botao">Quero Baixar o eBook</button></p>
     </div>
-    <div class="image">
+    <div class="image div-hidden">
       <img src="./public/sec3.webp"/>
     </div>
   </section>
 
   <section class="secao escura">
-    <div class="text" style="text-align: center;">
+    <div class="text div-hidden" style="text-align: center;">
       <h3 style="margin-bottom: 80px;">Você vai aprender</h3>
       <div class="cards">
         <div class="cards">
@@ -52,7 +52,7 @@
   </section>
 
   <section class="section-two secao clara" id="formulario">
-    <div class="text" style="margin: auto;">
+    <div class="text div-hidden" style="margin: auto;">
       <h3>Conteúdo do eBook</h3>
       <ul class="lista-conteudo">
         <li>✔️ Alocação de ativos</li>
@@ -62,11 +62,11 @@
         <li>✔️ Estratégias fiscais e networking</li>
       </ul>
     </div>
-    <form class="formulario" onsubmit="enviarFormulario(event)">
+    <form class="formulario div-hidden" onsubmit="enviarFormulario(event)">
       <h2>Receba o eBook no seu e-mail</h2>
       <input type="text" placeholder="Nome completo*" required>
-      <input type="tel" placeholder="Telefone*" required>
-      <input type="email" placeholder="E-mail (opcional)">
+      <input type="tel" id="telefone" placeholder="Telefone*" pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(11) 91234-5678" required>
+      <input type="email" placeholder="E-mail*" required>
       <button type="submit">Receber Agora</button>
       <p class="privacidade">🔒 Seus dados estão protegidos. Sem spam!</p>
     </form>
@@ -77,5 +77,13 @@
   </footer>
 
   <script src="./script.js"></script>
+  <!-- Modal personalizado -->
+  <div id="modalMensagem" class="modal">
+    <div class="modal-conteudo">
+      <p id="modalTexto">Mensagem enviada!</p>
+      <button onclick="fecharModal()">OK</button>
+    </div>
+  </div>
+
 </body>
 </html>

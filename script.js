@@ -40,3 +40,5 @@ document.getElementById('aprenderBtn').addEventListener('click', function () {
   const destino = document.getElementById('queroAprender');
   destino.scrollIntoView({ behavior: 'smooth' });
 });
+
+// so tentando algo
